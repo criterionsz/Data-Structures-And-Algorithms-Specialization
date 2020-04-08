@@ -6,10 +6,12 @@ fun calcFib(n: Long): Long {
 }
 
 fun calcFibFast(n: Long): Long {
+    if (n == 0L)
+        return 0
     var a: Long = 0
     var b: Long = 1
-    var c: Long = 0
-    for(i in 0 until (n-1)){
+    var c: Long = 1
+    for(i in 1 until n){
         c = a+b
         a = b
         b = c
