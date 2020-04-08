@@ -15,12 +15,27 @@ fun getFibonacciSumNaive(n: Long): Long {
         sum += current
     }
 
-    return sum % 10
+    return sum%10
 }
 
+fun getFibonacciSumFast(n: Long): Long{
+    if (n%60 <= 1)
+        return n%60
+    var previous = 0L
+    var current = 1L
+    var c = 1L
+    var sum = 1L
+    for(i in 1 until n%60){
+        c = (previous+current)%10
+        previous = current
+        current = c
+        sum = (sum+ c)%10
+    }
+    return sum
+}
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
     val n = scanner.nextLong()
-    val s = getFibonacciSumNaive(n)
-    println(s)
+    println(getFibonacciSumFast(n))
+    //stressTestFibonacciSumLastDigit(::getFibonacciSumNaive, ::getFibonacciSumFast)
 }

@@ -28,3 +28,16 @@ fun stressTestLcm(naive: (a: Int, b: Int) -> Long, mine: (c: Int, d: Int) -> Lon
     } while (tn == tm)
 
 }
+
+fun stressTestFibonacciSumLastDigit(naive: (a: Long) -> Long, mine: (c: Long) -> Long) {
+    var i = 1L
+    do {
+
+        var tn = naive(i)
+        var tm = mine(i)
+        i++
+        println("naive: $tn \t fast: $tm \t n: $i")
+
+    } while (tn == tm)
+
+}
