@@ -16,3 +16,15 @@ fun stressTestGcd(naive: (a: Int, b: Int) -> Int, mine: (c: Int, d: Int) -> Int)
     } while (tn == tm)
 
 }
+
+fun stressTestLcm(naive: (a: Int, b: Int) -> Long, mine: (c: Int, d: Int) -> Long) {
+    do {
+        var f = (0..400000).random()
+        var s = (0..400000).random()
+        println("$f $s")
+        var tn = naive(f, s)
+        var tm = mine(f, s)
+
+    } while (tn == tm)
+
+}
