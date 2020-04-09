@@ -1,8 +1,17 @@
 import java.util.*
 
 fun getChange(m: Int): Int {
-    //write your code here
-    return m
+    var n = m
+    var k = 0
+    while (n>9) {
+        n -= 10
+        k+=1
+    }
+    while(n>=5) {
+        n -= 5
+        k+=1
+    }
+    return k+n
 }
 
 fun main(args: Array<String>) {
