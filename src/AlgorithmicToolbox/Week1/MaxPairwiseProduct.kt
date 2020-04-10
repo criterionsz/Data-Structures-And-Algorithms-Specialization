@@ -6,19 +6,6 @@ import java.io.InputStream
 import java.io.InputStreamReader
 import java.util.*
 
-fun getMaxPairwiseProduct(numbers: IntArray): Int {
-    var result = 0
-    val n = numbers.size
-    for (i in 0 until n) {
-        for (j in i + 1 until n) {
-            if (numbers[i] * numbers[j] > result) {
-                result = numbers[i] * numbers[j]
-            }
-        }
-    }
-    return result
-}
-
 fun getMaxPairwiseProductFast(numbers: IntArray): Long {
     var max_index1 = -1
     var max_index2 = -1
