@@ -1,7 +1,8 @@
 import java.util.*
 
-fun maxDotProduct(a: IntArray, b: IntArray): Long {
-    //write your code here
+fun maxDotProduct(a: LongArray, b: LongArray): Long {
+    a.sort()
+    b.sort()
     var result: Long = 0
     for (i in a.indices) {
         result += (a[i] * b[i]).toLong()
@@ -12,13 +13,13 @@ fun maxDotProduct(a: IntArray, b: IntArray): Long {
 fun main(args: Array<String>) {
     val scanner = Scanner(System.`in`)
     val n = scanner.nextInt()
-    val a = IntArray(n)
+    val a = LongArray(n)
     for (i in 0 until n) {
-        a[i] = scanner.nextInt()
+        a[i] = scanner.nextLong()
     }
-    val b = IntArray(n)
+    val b = LongArray(n)
     for (i in 0 until n) {
-        b[i] = scanner.nextInt()
+        b[i] = scanner.nextLong()
     }
     println(maxDotProduct(a, b))
 }

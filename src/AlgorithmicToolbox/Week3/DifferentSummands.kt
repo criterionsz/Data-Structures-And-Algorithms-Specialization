@@ -1,8 +1,20 @@
 import java.util.*
 
 fun optimalSummands(n: Int): List<Int> {
-    //write your code here
-    return ArrayList()
+    var arr = arrayListOf<Int>()
+    var i = 1
+    var t = n
+    while(true) {
+        if (i < (t - i)) {
+            arr.add(i)
+            t -= i
+            i++
+        } else {
+            arr.add(t)
+            break
+        }
+    }
+    return arr
 }
 
 fun main(args: Array<String>) {
