@@ -33,6 +33,7 @@ fun stressTestFibonacciSumLastDigit(naive: (a: Long) -> Long, mine: (c: Long) ->
     var i = 1L
     do {
 
+
         var tn = naive(i)
         var tm = mine(i)
         i++
@@ -40,4 +41,27 @@ fun stressTestFibonacciSumLastDigit(naive: (a: Long) -> Long, mine: (c: Long) ->
 
     } while (tn == tm)
 
+}
+
+fun stressTestMajorityElement(naive: (a: LongArray, left: Int, right: Int) -> Int, mine: (a: LongArray, left: Int, right: Int) -> Int) {
+    do {
+        var n = (1..1000).random()
+        var a = randomizeArray(n)
+        a.forEach { print("$it ") }
+        println()
+        var tn = naive(a, 0, a.size)
+        var tm = mine(a, 0, a.size)
+        println("naive: $tn \t fast: $tm \t")
+
+    } while (tn == tm)
+
+}
+
+fun randomizeArray(n: Int): LongArray{
+    val a = LongArray(n)
+    for (i in 0 until n) {
+        var f: Long = (0..1000000000).random().toLong()
+        a[i] = f
+    }
+    return a
 }
